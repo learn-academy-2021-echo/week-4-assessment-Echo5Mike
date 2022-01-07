@@ -2,13 +2,22 @@
 # MINASWAN
 
 # --------------------1) Create a method that takes in a number and determines if the number is even or odd. Use the test variables provided.
-
 num1 = 7
 # Expected output: '7 is odd'
 num2 = 42
 # Expected output: '42 is even'
 num3 = 221
 # Expected output: '221 is odd'
+
+def checker numer
+    numer.even? ? "#{numer} is even" : "#{numer} is odd"
+end
+p checker num1
+p checker num2
+p checker num3
+
+
+
 
 
 
@@ -21,6 +30,12 @@ album2 = 'Sgt Pepper'
 album3 = 'Abbey Road'
 # Expected output: 'bby Rd'
 
+def vowel_remover string
+    string.delete "aeiouAEIOU"
+end
+p vowel_remover album1
+p vowel_remover album2
+p vowel_remover album3
 
 
 # -------------------3) Create a method that takes in a string and checks if the string is a palindrome. A palindrome is the same word spelled forwards or backwards. Use the test variables provided.
@@ -31,3 +46,11 @@ is_palindrome2 = 'LEARN'
 # Expected output: 'LEARN is not a palindrome'
 is_palindrome3 = 'Rotator'
 # Expected output: 'Rotator is a palindrome'
+
+def mirror string
+    string.downcase == string.downcase.reverse ? :"#{string} is a palindrome" : :"#{string} is NOT a palindrome"
+end
+
+p mirror is_palindrome1
+p mirror is_palindrome2
+p mirror is_palindrome3

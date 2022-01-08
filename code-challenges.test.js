@@ -1,5 +1,6 @@
 // ASSESSMENT 4: JavaScript Coding Practical Questions with Jest
 
+
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
 // If you get stuck, please leave comments to help us understand your thought process
@@ -15,9 +16,35 @@
 
 // a) Create a test with an expect statement using the variable provided. HINT: Check out this resource: https://jestjs.io/docs/expect#expectarraycontainingarray
 
-var colors1 = ["purple", "blue", "green", "yellow", "pink"]
+describe('colorArray', ()=> {
+    var colors1 = ["purple", "blue", "green", "yellow", "pink"]
+    output1 = ["yellow", "blue", "pink", "green"]
+
+    var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
+    output2 = ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
+
+    it ('takes in an array, removes the first item from the array and shuffles the remaining content', ()=> {
+        expect(colorArray(colors1)).toEqual(expect.arrayContaining(output1))
+        expect(colorArray(colors2)).toEqual(expect.arrayContaining(output2))
+    })
+})
+// my test needs a expect.any, .toContain , expect.arrayContaining(array)
+// my function needs to take in an array of strings
+    //colorArray()=>
+    // function needs to remove first item from array.... unshift or shift to remove firs item array.
+    // after first item is removed the strings in the array need to be shuffled
+    // once shuffled I need to revist my test to see if it passed
+    
+const colorArray = (array) =>{
+    let scrambledArray = array.slice(1).sort(() => Math.random()-0.5)
+    //I looked up the Math.random()-0.5), 
+    return scrambledArray
+}
+
+
+// var colors1 = ["purple", "blue", "green", "yellow", "pink"]
 // Expected output example (can be a different order): ["yellow", "blue", "pink", "green"]
-var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
+// var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
 // Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
 
 
